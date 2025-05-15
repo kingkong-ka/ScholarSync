@@ -35,6 +35,11 @@ class StudentManualController extends Controller
             $query->orderBy('violation_name');
         }])->get();
 
+
         return view('student-manual', compact('categories'));
     }
+
+
+    
 }
+

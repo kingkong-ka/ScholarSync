@@ -89,9 +89,13 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/student/manual', function() {
     //     return view('student.manual');
     // })->name('student.manual')
+    
     Route::get('/student-manual', [StudentManualController::class, 'index'])->name('student-manual');
     Route::get('/manual', [ManualController::class, 'index'])->name('manual');
+
     
+
+
     // Points and redemption routes
     Route::get('/earn-points', [StudentController::class, 'earnPoints'])->name('student.earn_points');
     Route::get('/redemption', [StudentController::class, 'redemption'])->name('student.redemption');
