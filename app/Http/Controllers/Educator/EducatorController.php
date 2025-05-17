@@ -651,4 +651,6 @@ class EducatorController extends Controller
                 ->with('error', 'Error updating violation: ' . $e->getMessage());
         }
     }
+
+    
 }

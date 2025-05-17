@@ -24,11 +24,11 @@ class StudentController extends Controller
             // If there's any error (like table doesn't exist), set count to 0
             $this->unreadCount = 0;
         }
-        
+
         View::share('unreadCount', $this->unreadCount);
     }
 
-  
+
     /**
      * Display the student dashboard
      */
@@ -43,7 +43,7 @@ class StudentController extends Controller
     public function account()
     {
         $user = Auth::user();
-        
+
         // Get additional data that might be needed for the dashboard
         $data = [
             'user' => $user,
@@ -52,7 +52,7 @@ class StudentController extends Controller
             'studentId' => 'STU-' . str_pad($user->id, 5, '0', STR_PAD_LEFT),
             'gradeLevel' => '11', // This could be fetched from a database in a real application
         ];
-        
+
         return view('student.dashboard', $data);
     }
 
@@ -68,21 +68,5 @@ class StudentController extends Controller
         return view('student.behavior');
     }
 
-    public function reward()
-    {
-        // You can add logic to fetch student rewards here
-        return view('student.reward');
-    }
 
-    public function earnPoints()
-    {
-        // You can add logic to handle earning points here
-        return view('student.earnPoints');
-    }
-
-    public function redemption()
-    {
-        // You can add logic to handle redemption here
-        return view('student.redemption');
-    }
 }
